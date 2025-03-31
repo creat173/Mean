@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আপনার নামের মানে জানুন!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>আপনার নামের মানে জানুন!</h2>
+        <input type="text" id="nameInput" placeholder="আপনার নাম লিখুন">
+        <button onclick="showMeaning()">জানতে চান?</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function showMeaning() {
+            let name = document.getElementById("nameInput").value.trim();
+            if (name === "") {
+                document.getElementById("result").innerText = "দয়া করে আপনার নাম লিখুন!";
+                return;
+            }
+            
+            let meanings = [
+                "আপনি খুবই মেধাবী!",
+                "আপনার হাসি সবার মন ভালো করে দেয়!",
+                "আপনি খুব দয়ালু একজন মানুষ!",
+                "আপনার ভবিষ্যৎ উজ্জ্বল!",
+                "আপনি যে কোনো কাজ দারুণভাবে করতে পারেন!",
+                "আপনার মধ্যে নেতা হওয়ার গুণাবলি আছে!"
+            ];
+            
+            let randomMeaning = meanings[Math.floor(Math.random() * meanings.length)];
+            document.getElementById("result").innerText = name + ": " + randomMeaning;
+        }
+    </script>
+</body>
+</html>
